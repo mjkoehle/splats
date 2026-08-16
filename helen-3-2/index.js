@@ -84294,14 +84294,8 @@ class CameraManager {
                 // use the first animTrack
                 return animTracks[0];
             }
-            else if (isObjectExperience) {
-                // create basic rotation animation if no anim track is specified
-                initial.calcFocusPoint(tmpv);
-                return createRotateTrack(initial.position, tmpv, initial.fov);
-            }
-            // non-object experience: gentle figure-8 motion from inside the scene
-            initial.calcFocusPoint(tmpv);
-            return createFigure8Track(initial.position, tmpv, initial.fov);
+            // auto-generated camera animations disabled — start in orbit mode with no play button
+            return null;
         };
         // object experience starts outside the bounding box
         const isObjectExperience = !bbox.containsPoint(resetCamera.position);
